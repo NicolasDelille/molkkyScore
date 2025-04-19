@@ -1,0 +1,67 @@
+{
+    "app": {
+        "title": "MölkkyScore",
+        "description": "Application de score pour le jeu de Mölkky"
+    },
+    "home": {
+        "newGame": "Nouvelle partie",
+        "history": "Historique",
+        "settings": "Paramètres",
+        "stats": "Statistiques"
+    },
+    "game": {
+        "addPlayer": "Ajouter un joueur",
+        "playerName": "Nom du joueur",
+        "startGame": "Commencer la partie",
+        "score": "Score",
+        "throw": "Lancer",
+        "reset": "Réinitialiser",
+        "save": "Sauvegarder",
+        "validateScore": "Valider le score : {{score}}",
+        "currentPlayer": "Joueur actuel",
+        "eliminated": "Éliminé",
+        "consecutiveZeros": "{{count}} échec{{count, plural, =1{} other{s}}}",
+        "continueGame": "Continuer la partie",
+        "newGame": "Nouvelle partie"
+    },
+    "settings": {
+        "title": "Paramètres",
+        "language": "Langue",
+        "maxScore": "Score maximum",
+        "sound": "Son",
+        "notifications": "Notifications",
+        "overScorePenalty": "Score de pénalité en cas de dépassement",
+        "elimination": "Règles d'élimination",
+        "eliminationEnabled": "Activer l'élimination",
+        "maxConsecutiveZeros": "Nombre de zéros consécutifs avant élimination",
+        "resetScoreOnMaxZeros": "Réinitialiser le score à 0 après {{count}} zéros consécutifs"
+    },
+    "winner": {
+        "title": "Partie terminée !",
+        "congratulations": "Félicitations {{name}} !",
+        "score": "Score final : {{score}}",
+        "newGame": "Nouvelle partie",
+        "home": "Retour à l'accueil"
+    },
+    "history": {
+        "title": "Historique des parties",
+        "empty": "Aucune partie enregistrée",
+        "game": "Partie",
+        "winner": "Gagnant",
+        "clear": "Effacer l'historique",
+        "resume": "Reprendre",
+        "unfinished": "Partie en cours"
+    },
+    "stats": {
+        "title": "Statistiques des joueurs",
+        "empty": "Aucune statistique enregistrée",
+        "clear": "Effacer les statistiques",
+        "winRate": "Taux de victoire",
+        "gamesPlayed": "Parties jouées",
+        "gamesWon": "Parties gagnées",
+        "averageScore": "Score moyen",
+        "bestScore": "Meilleur score",
+        "accuracy": "Précision",
+        "eliminations": "Éliminations"
+    }
+}

@@ -1,0 +1,67 @@
+{
+    "app": {
+        "title": "MölkkyScore",
+        "description": "Score application for the Mölkky game"
+    },
+    "home": {
+        "newGame": "New Game",
+        "history": "History",
+        "settings": "Settings",
+        "stats": "Statistics"
+    },
+    "game": {
+        "addPlayer": "Add Player",
+        "playerName": "Player Name",
+        "startGame": "Start Game",
+        "score": "Score",
+        "throw": "Throw",
+        "reset": "Reset",
+        "save": "Save",
+        "validateScore": "Validate score: {{score}}",
+        "currentPlayer": "Current Player",
+        "eliminated": "Eliminated",
+        "consecutiveZeros": "{{count}} failure{{count, plural, =1{} other{s}}}",
+        "continueGame": "Continue Game",
+        "newGame": "New Game"
+    },
+    "settings": {
+        "title": "Settings",
+        "language": "Language",
+        "maxScore": "Maximum Score",
+        "sound": "Sound",
+        "notifications": "Notifications",
+        "overScorePenalty": "Over Score Penalty",
+        "elimination": "Elimination Rules",
+        "eliminationEnabled": "Enable Elimination",
+        "maxConsecutiveZeros": "Maximum Consecutive Zeros Before Elimination",
+        "resetScoreOnMaxZeros": "Reset score to 0 after {{count}} consecutive zeros"
+    },
+    "winner": {
+        "title": "Game Over!",
+        "congratulations": "Congratulations {{name}}!",
+        "score": "Final Score: {{score}}",
+        "newGame": "New Game",
+        "home": "Back to Home"
+    },
+    "history": {
+        "title": "Game History",
+        "empty": "No games recorded",
+        "game": "Game",
+        "winner": "Winner",
+        "clear": "Clear History",
+        "resume": "Resume",
+        "unfinished": "Game in progress"
+    },
+    "stats": {
+        "title": "Player Statistics",
+        "empty": "No statistics recorded",
+        "clear": "Clear Statistics",
+        "winRate": "Win Rate",
+        "gamesPlayed": "Games Played",
+        "gamesWon": "Games Won",
+        "averageScore": "Average Score",
+        "bestScore": "Best Score",
+        "accuracy": "Accuracy",
+        "eliminations": "Eliminations"
+    }
+}
