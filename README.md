@@ -27,7 +27,7 @@ Une application web pour suivre les scores du jeu de Mölkky.
 
 ```bash
 # Cloner le dépôt
-git clone https://github.com/votre-username/molkkyScore.git
+git clone https://github.com/nicolasdelille/molkkyScore.git
 
 # Installer les dépendances
 npm install
@@ -38,7 +38,7 @@ npm run dev
 
 ## Déploiement
 
-L'application est déployée sur GitHub Pages et accessible à l'adresse : [https://votre-username.github.io/molkkyScore](https://votre-username.github.io/molkkyScore)
+L'application est déployée sur GitHub Pages et accessible à l'adresse : [https://nicolasdelille.github.io/molkkyScore](https://nicolasdelille.github.io/molkkyScore)
 
 ## Licence
 
