@@ -15,11 +15,13 @@ const Home = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
-            <h1 className="text-4xl font-bold text-gray-800 mb-8">{t('app.title')}</h1>
-            <p className="text-gray-600 mb-12 text-center">{t('app.description')}</p>
+        <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex flex-col items-center justify-center p-4">
+            <div className="max-w-md w-full space-y-4">
+                <h1 className="text-3xl font-bold text-center text-gray-800 dark:text-white mb-8">
+                    {t('app.title')}
+                </h1>
+                <p className="text-gray-600 mb-12 text-center">{t('app.description')}</p>
 
-            <div className="space-y-4 w-full max-w-md">
                 {gameStarted ? (
                     <>
                         <Link
@@ -46,6 +48,13 @@ const Home = () => {
                 )}
 
                 <Link
+                    to="/stats"
+                    className="block w-full bg-green-500 text-white py-3 px-6 rounded-lg text-center hover:bg-green-600 transition-colors"
+                >
+                    {t('home.stats')}
+                </Link>
+
+                <Link
                     to="/history"
                     className="block w-full bg-gray-500 text-white py-3 px-6 rounded-lg text-center hover:bg-gray-600 transition-colors"
                 >
@@ -54,7 +63,7 @@ const Home = () => {
 
                 <Link
                     to="/settings"
-                    className="block w-full bg-gray-300 text-gray-800 py-3 px-6 rounded-lg text-center hover:bg-gray-400 transition-colors"
+                    className="block w-full bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-white py-3 px-6 rounded-lg text-center hover:bg-gray-400 dark:hover:bg-gray-600 transition-colors"
                 >
                     {t('home.settings')}
                 </Link>

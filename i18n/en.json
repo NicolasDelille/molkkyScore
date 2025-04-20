@@ -3,6 +3,10 @@
         "title": "MölkkyScore",
         "description": "Score application for the Mölkky game"
     },
+    "theme": {
+        "light": "Light theme",
+        "dark": "Dark theme"
+    },
     "home": {
         "newGame": "New Game",
         "history": "History",

@@ -39,15 +39,15 @@ const Game = () => {
     return (
         <div className="w-full">
             {!gameStarted ? (
-                <div className="bg-white rounded-lg shadow p-4 sm:p-6 mb-4">
-                    <h2 className="text-2xl font-bold mb-4">{t('game.addPlayer')}</h2>
+                <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 sm:p-6 mb-4">
+                    <h2 className="text-2xl font-bold mb-4 dark:text-white">{t('game.addPlayer')}</h2>
                     <div className="flex gap-2 mb-4">
                         <input
                             type="text"
                             value={newPlayerName}
                             onChange={(e) => setNewPlayerName(e.target.value)}
                             placeholder={t('game.playerName')}
-                            className="flex-1 p-2 border rounded"
+                            className="flex-1 p-2 border rounded dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                         />
                         <button
                             onClick={handleAddPlayer}
@@ -59,11 +59,11 @@ const Game = () => {
 
                     <div className="space-y-2">
                         {players.map((player) => (
-                            <div key={player.id} className="flex items-center justify-between p-2 bg-gray-50 rounded">
-                                <span>{player.name}</span>
+                            <div key={player.id} className="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-700 rounded">
+                                <span className="dark:text-white">{player.name}</span>
                                 <button
                                     onClick={() => removePlayer(player.id)}
-                                    className="text-red-500 hover:text-red-700"
+                                    className="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 bg-transparent text-xl font-bold"
                                 >
                                     ×
                                 </button>
@@ -82,17 +82,17 @@ const Game = () => {
                 </div>
             ) : (
                 <div className="flex flex-col gap-2 sm:gap-4">
-                    <div className="bg-white rounded-lg shadow p-4 sm:p-6">
+                    <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 sm:p-6">
                         <div className="flex justify-between items-center mb-2 sm:mb-4">
-                            <h2 className="text-xl sm:text-2xl font-bold">{t('game.score')}</h2>
+                            <h2 className="text-xl sm:text-2xl font-bold dark:text-white">{t('game.score')}</h2>
                             <button
                                 onClick={() => setIsScoreExpanded(!isScoreExpanded)}
-                                className="p-1 sm:p-2 hover:bg-gray-100 rounded-full transition-transform duration-200"
+                                className="p-1 sm:p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-transform duration-200"
                             >
                                 {isScoreExpanded ? (
-                                    <ChevronUpIcon className="h-5 w-5 sm:h-6 sm:w-6" />
+                                    <ChevronUpIcon className="h-5 w-5 sm:h-6 sm:w-6 dark:text-white" />
                                 ) : (
-                                    <ChevronDownIcon className="h-5 w-5 sm:h-6 sm:w-6" />
+                                    <ChevronDownIcon className="h-5 w-5 sm:h-6 sm:w-6 dark:text-white" />
                                 )}
                             </button>
                         </div>
@@ -105,16 +105,16 @@ const Game = () => {
                                     <div
                                         key={player.id}
                                         className={`p-2 rounded ${index === currentPlayerIndex
-                                            ? 'bg-blue-100 border-2 border-blue-500'
+                                            ? 'bg-blue-100 dark:bg-blue-900 border-2 border-blue-500 dark:border-blue-400'
                                             : player.isEliminated
-                                                ? 'bg-red-100 border-2 border-red-500'
-                                                : 'bg-gray-50'
+                                                ? 'bg-red-100 dark:bg-red-900 border-2 border-red-500 dark:border-red-400'
+                                                : 'bg-gray-50 dark:bg-gray-700'
                                             }`}
                                     >
                                         <div className="flex flex-col gap-2">
                                             <div className="flex justify-between items-center">
                                                 <div className="flex items-center gap-2">
-                                                    <span>{player.name}</span>
+                                                    <span className="dark:text-white">{player.name}</span>
                                                     {index === currentPlayerIndex && (
                                                         <span className="text-xs bg-blue-500 text-white px-2 py-1 rounded">
                                                             {t('game.currentPlayer')}
@@ -126,7 +126,7 @@ const Game = () => {
                                                         </span>
                                                     )}
                                                 </div>
-                                                <span className="font-bold">{player.score}</span>
+                                                <span className="font-bold dark:text-white">{player.score}</span>
                                             </div>
                                             <div className="flex gap-1 flex-wrap">
                                                 {player.throws.map((throwScore, throwIndex) => (
@@ -148,8 +148,8 @@ const Game = () => {
                         </div>
                     </div>
 
-                    <div className="bg-white rounded-lg shadow p-4 sm:p-6">
-                        <h2 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-4">
+                    <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 sm:p-6">
+                        <h2 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-4 dark:text-white">
                             {t('game.throw')} - {players[currentPlayerIndex]?.name}
                         </h2>
                         <div className="flex flex-col items-center gap-2 sm:gap-4">

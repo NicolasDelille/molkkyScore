@@ -1,46 +1,39 @@
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Link, useLocation } from 'react-router-dom';
-import { HomeIcon, ClockIcon, ChartBarIcon, Cog6ToothIcon } from '@heroicons/react/24/outline';
+import { useThemeStore } from '../store/useThemeStore';
+import { SunIcon, MoonIcon } from '@heroicons/react/24/outline';
 
-const Navbar = () => {
+export const Navbar = () => {
     const { t } = useTranslation();
-    const location = useLocation();
-
-    const isActive = (path: string) => {
-        return location.pathname === path;
-    };
-
-    const navItems = [
-        { path: '/', icon: HomeIcon, label: t('home.newGame') },
-        { path: '/history', icon: ClockIcon, label: t('home.history') },
-        { path: '/stats', icon: ChartBarIcon, label: t('home.stats') },
-        { path: '/settings', icon: Cog6ToothIcon, label: t('home.settings') },
-    ];
+    const { isDark, toggleTheme } = useThemeStore();
 
     return (
-        <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200">
-            <div className="max-w-7xl mx-auto">
-                <div className="flex justify-around">
-                    {navItems.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                            <Link
-                                key={item.path}
-                                to={item.path}
-                                className={`flex flex-col items-center py-2 px-4 ${isActive(item.path)
-                                        ? 'text-blue-500'
-                                        : 'text-gray-500 hover:text-gray-700'
-                                    }`}
-                            >
-                                <Icon className="h-6 w-6" />
-                                <span className="text-xs mt-1">{item.label}</span>
-                            </Link>
-                        );
-                    })}
+        <nav className="bg-white dark:bg-gray-800 shadow-lg">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex justify-between h-16">
+                    <div className="flex">
+                        <Link
+                            to="/"
+                            className="flex items-center px-3 py-2 rounded-md text-sm font-medium text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                        >
+                            {t('app.title')}
+                        </Link>
+                    </div>
+                    <div className="flex items-center">
+                        <button
+                            onClick={toggleTheme}
+                            className="p-2 rounded-md text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 bg-transparent"
+                            aria-label={isDark ? t('theme.light') : t('theme.dark')}
+                        >
+                            {isDark ? (
+                                <SunIcon className="h-6 w-6" />
+                            ) : (
+                                <MoonIcon className="h-6 w-6" />
+                            )}
+                        </button>
+                    </div>
                 </div>
             </div>
         </nav>
     );
-};
-
-export default Navbar; 
+}; 

@@ -3,6 +3,10 @@
         "title": "MölkkyScore",
         "description": "Application de score pour le jeu de Mölkky"
     },
+    "theme": {
+        "light": "Thème clair",
+        "dark": "Thème sombre"
+    },
     "home": {
         "newGame": "Nouvelle partie",
         "history": "Historique",

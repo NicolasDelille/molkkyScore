@@ -70,11 +70,11 @@ const History = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-100 p-4">
+        <div className="min-h-screen bg-gray-100 dark:bg-gray-900 p-4">
             <div className="max-w-4xl mx-auto">
-                <div className="bg-white rounded-lg shadow p-6">
+                <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
                     <div className="flex justify-between items-center mb-6">
-                        <h1 className="text-2xl font-bold text-gray-800">{t('history.title')}</h1>
+                        <h1 className="text-2xl font-bold text-gray-800 dark:text-white">{t('history.title')}</h1>
                         {games.length > 0 && (
                             <button
                                 onClick={clearHistory}
@@ -86,26 +86,26 @@ const History = () => {
                     </div>
 
                     {games.length === 0 ? (
-                        <p className="text-gray-600 text-center">{t('history.empty')}</p>
+                        <p className="text-gray-600 dark:text-gray-300 text-center">{t('history.empty')}</p>
                     ) : (
                         <div className="space-y-6">
                             {games.map((game) => (
                                 <div
                                     key={game.id}
                                     className={`border rounded-lg p-4 ${game.isFinished
-                                            ? 'bg-gray-50'
-                                            : game.id === currentGameId
-                                                ? 'bg-blue-100 border-blue-300'
-                                                : 'bg-blue-50'
+                                        ? 'bg-gray-50 dark:bg-gray-700'
+                                        : game.id === currentGameId
+                                            ? 'bg-blue-100 dark:bg-blue-900 border-blue-300 dark:border-blue-700'
+                                            : 'bg-blue-50 dark:bg-blue-900/50'
                                         }`}
                                 >
                                     <div className="flex justify-between items-center mb-4">
                                         <div className="flex items-center gap-2">
-                                            <h2 className="text-lg font-semibold text-gray-800">
+                                            <h2 className="text-lg font-semibold text-gray-800 dark:text-white">
                                                 {t('history.game')} - {formatDate(game.date)}
                                             </h2>
                                             {!game.isFinished && (
-                                                <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-sm">
+                                                <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-sm">
                                                     {t('history.unfinished')}
                                                 </span>
                                             )}
@@ -131,19 +131,19 @@ const History = () => {
                                             <div
                                                 key={player.name}
                                                 className={`flex justify-between items-center p-2 rounded ${game.isFinished && game.winner && player.name === game.winner.name
-                                                        ? 'bg-green-50'
-                                                        : 'bg-gray-50'
+                                                    ? 'bg-green-50 dark:bg-green-900/50'
+                                                    : 'bg-gray-50 dark:bg-gray-700'
                                                     }`}
                                             >
                                                 <div className="flex items-center gap-2">
-                                                    <span>{player.name}</span>
+                                                    <span className="dark:text-white">{player.name}</span>
                                                     <div className="flex gap-1 flex-wrap">
                                                         {player.throws.map((throwScore, index) => (
                                                             <div
                                                                 key={`${game.id}-${player.name}-${index}`}
                                                                 className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold ${throwScore === 0
-                                                                        ? 'bg-red-500 text-white'
-                                                                        : 'bg-green-500 text-white'
+                                                                    ? 'bg-red-500 text-white'
+                                                                    : 'bg-green-500 text-white'
                                                                     }`}
                                                             >
                                                                 {throwScore}
